@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="renderer" content="webkit">
+        <!-- 360浏览器默认用极速核(webkit) -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!--避免IE使用兼容模式-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+        />
+        <meta name="screen-orientation" content="portrait">
+        <!-- UC强制竖屏 -->
+        <meta name="x5-orientation" content="portrait" />
+        <!-- QQ强制竖屏 -->
+        <meta name="full-screen" content="yes">
+        <!-- UC强制全屏 -->
+        <meta name="x5-fullscreen" content="true" />
+        <!-- QQ强制全屏 -->
+        <meta name="browsermode" content="application" />
+        <!-- UC应用模式 -->
+        <meta name="x5-page-mode" content="app" />
+        <!-- UC应用模式 -->
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- windows phone 点击无高光 -->
+        <title>
+            虚假磁力链接生成器
+        </title>
+        <style>
+body {
+  margin: 0;
+  color: #5a5a5a;
+}
+
+body, html, a {
+  font-family: Helvetica Neue,Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 .5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #2a2a2a;
+}
+
+h1, .h1 {
+  font-size: 36px;
+}
+
+h2, .h2 {
+  font-size: 30px;
+}
+
+h3, .h3 {
+  font-size: 24px;
+}
+
+h4, .h4 {
+  font-size: 18px;
+}
+
+h5, .h5 {
+  font-size: 14px;
+}
+
+h6, .h6 {
+  font-size: 12px;
+}
+
+.ui-block {
+  width: 25%;
+  border: 0;
+  float: left;
+  min-height: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media(min-width:768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media(min-width:992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media(min-width:1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.clearfix:before, .clearfix:after{
+  display: table;
+  content: " ";
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-lg {
+  padding: 14px;
+  font-size: 21px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #009bff;
+}
+
+.counter {
+  display: inline-block;
+  float: left;
+  margin-right: 15px;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  line-height: 48px;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background: #009bff;
+}
+
+.block {
+  display: block;
+  position: relative;
+  padding-top: 12px;
+}
+
+.text-center {
+  text-align: center;
+}
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="block">
+                <h3>
+                    虚假磁力链接生成器
+                </h3>
+            </div>
+            <button id="button" type="button" class="btn btn-primary btn-lg btn-block"
+            onclick="generate();" ;>
+                开黑车！
+            </button>
+            <div class="block" id="result" style="word-break:break-all">
+            </div>
+        </div>
+        <script>
+            function stringToHex(num) {
+			arr = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F");　　　　
+            return arr[num];
+            }
+            function generate() {
+                num = '';
+                for (i = 0; i < 40; i++) {
+                    num += stringToHex(Math.floor(Math.random() * 16));
+                }
+                document.getElementById("result").innerHTML = 'magnet:?xt=urn:btih:' + num;
+            }
+        </script>
+    </body>
+
+</html>
